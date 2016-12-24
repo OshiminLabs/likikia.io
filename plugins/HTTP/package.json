@@ -1,7 +1,7 @@
 {
-  "name": "likikia-io-plugin-repl",
-  "localName" : "REPL", 
-  "properties"   : ["HTTP.replAction..","REPL.exec.","REPL.exec.toto","REPL.exec.lol","REPL.add","REPL.version"],
+  "name": "likikia-io-plugin-http",
+  "localName" : "HTTP",
+  "properties" : "HTTP.get",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "keywords": [
     "likikia.io",
     "plugin",
-    "repl"
+    "http"
   ],
   "author": "badinga.ulrich@gmail.com",
   "license": "ISC"

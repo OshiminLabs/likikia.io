@@ -1,2 +1,3 @@
 .git
 .npmlog
+node_modules/*
