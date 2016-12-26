@@ -1,16 +1,18 @@
 const repl = require('repl');
 var msg = 'message';
 app.on("stop",()=>{
-    console.log("bye bye");
+    console.log("REPL bye bye");
 });
 app.on("start",async function(){
     var e = repl.start('$ ').context;
     e.m = msg;
     e.app = app;    
     try {
-        console.log("GET",await app.HTTP.get(function(val){
-            console.log("remote GET",e.m,val);
-        }));
+        var result = await app.HTTP.get(function(val,done){
+            console.log("remote GET",val[0]);
+            return "merci"; // => done("merci")
+        });
+        console.log("HTTP.get =",result);
     }catch(x){
         console.log( "ERROR", x);
     };
