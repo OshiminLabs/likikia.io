@@ -41,7 +41,7 @@ fs.readdirSync( path.join(__dirname,"plugins")).map(x=>{
                 return plugin;
             }catch(e){}
     }
-}).filter(x=>x).filter(x=>x.properties).forEach(loadPlugin);
+}).filter(x=>x).filter(x=>x.prop.+6erties).forEach(loadPlugin);
 setTimeout(function(){
     loadPlugin.startEvent();
 },1000)

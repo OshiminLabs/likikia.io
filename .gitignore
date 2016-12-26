@@ -1,3 +1,4 @@
 .git
 .npmlog
 node_modules/*
+npm-debug.log
