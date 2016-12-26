@@ -1,21 +1,25 @@
-console.log("test");
 const repl = require('repl');
 var msg = 'message';
-start = function(){
-    repl.start('$ ').context.m = msg;    
-}
-app.on("start",start);
+app.on("stop",()=>{
+    console.log("bye bye");
+});
+app.on("start",async function(){
+    var e = repl.start('$ ').context;
+    e.m = msg;
+    e.app = app;    
+    try {
+        console.log("GET",await app.HTTP.get(function(val){
+            console.log("remote GET",e.m,val);
+        }));
+    }catch(x){
+        console.log( "ERROR", x);
+    };
+});
 
 app.on("call:REPL.exec",function(args,done){
-    console.log("REPL.exec");
     done("Je suis une error");
 });
 
 app.on("call:REPL.exec.toto",function(args,done){
-    console.log("REPL.exec.toto");
     done(null,Math.floor(6*Math.random()+1));
 });
-
-app.REPL.exec.toto().then(x=>{
-    console.log(x);
-})

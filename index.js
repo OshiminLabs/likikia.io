@@ -26,11 +26,13 @@ logger.set('console', new ConsoleTransport({
   level: 'DEBUG',
 }));
 
-/*["debug","log","info","warn","error"].forEach(x=>console[x] = function(){
+/*
+["debug","log","info","warn","error"].forEach(x=>console[x] = function(){
     var a = Array.prototype.slice.call(arguments);
     a.unshift(`[${phpjs.date("d/m/Y H:i:s")}]`);
     logger[x =="log" ? "debug" : x ].apply(logger,a);
-});*/
+});
+*/
 // load all plugins
 fs.readdirSync( path.join(__dirname,"plugins")).map(x=>{
     if(fs.existsSync(path.join(__dirname,"plugins",x,"package.json"))){
@@ -46,4 +48,4 @@ setTimeout(function(){
     loadPlugin.startEvent();
 },1000)
 
-console.log(JSON.stringify(CORE,null,4));
+//console.log(JSON.stringify(CORE,null,4));
