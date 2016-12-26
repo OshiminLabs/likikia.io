@@ -10,6 +10,7 @@ app.on("start",async function(){
     try {
         console.log("GET",await app.HTTP.get(function(val){
             console.log("remote GET",e.m,val);
+            return true;
         }));
     }catch(x){
         console.log( "ERROR", x);
