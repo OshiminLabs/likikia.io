@@ -3,7 +3,7 @@
   "localName" : "HTTP",
   "categorie" : "system",
   "properties" : ["os","HTTP.get"],
-  "depends" : ["dep","depen"],
+  "depends" : ["REPL"],
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
