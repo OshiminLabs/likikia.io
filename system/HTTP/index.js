@@ -6,7 +6,7 @@ app.on("call:HTTP.get",function(args,done){
 app.on("call:HTTP.get",async function(args,done){
     try{
         var fn = args[0];
-        var result = await fn("cool");
+        var result = await fn("cool"+Math.floor(6*Math.random()+1));
         console.log("remote EXEC",result);
         done(null,await app.os("RES-"+Math.floor(6*Math.random()+1)));
     } catch(e){
@@ -18,10 +18,12 @@ app.on("call:os",function(args,done){
     done(null,args[0]+"-OS-"+Math.floor(6*Math.random()+1));
 });
 app.on("start",function(){
-    setTimeout(()=>{
-        console.log(123);
-        app.stopContainer("HTTP","REPL");
-    },5000)
+    app.REPL.exec.toto["."]()
+        .then(console.log.bind(console,"call exec.toto"))
+        .catch(console.error.bind(console,"call error exec.toto"));
+    app.REPL.exec["."]()
+        .then(console.log.bind(console,"call exec"))
+        .catch(console.error.bind(console,"call error exec"));
 })
 app.on("stop",()=>{
     console.log("HTTP bye bye");
