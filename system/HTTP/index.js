@@ -3,7 +3,7 @@ app.on("call:HTTP.get",function(args,done){
     app.os("RES-"+Math.floor(6*Math.random()+1)).then(x=>done(null,x),x=>done(x));
 });*/
 
-app.on("call:HTTP.get",async function(args,done){
+app.on("call:HTTP.get", async function(args,done) {
     try{
         var fn = args[0];
         var result = await fn("cool");

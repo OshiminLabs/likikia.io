@@ -1,6 +1,7 @@
 {
   "name": "likikia-io-plugin-repl",
   "localName" : "REPL", 
+  "categorie" : "terminal",
   "properties"   : ["HTTP.replAction","REPL.exec","REPL.exec.toto","REPL.exec.lol","REPL.add","REPL.version"],
   "version": "1.0.0",
   "description": "",

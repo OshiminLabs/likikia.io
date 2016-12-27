@@ -1,7 +1,9 @@
 {
   "name": "likikia-io-plugin-http",
   "localName" : "HTTP",
+  "categorie" : "system",
   "properties" : ["os","HTTP.get"],
+  "depends" : ["dep","depen"],
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
