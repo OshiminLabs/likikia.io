@@ -24,7 +24,15 @@ app.on("call:os",function(args,done){
     app.REPL.exec["."]()
         .then(console.log.bind(console,"call exec"))
         .catch(console.error.bind(console,"call error exec"));
-})*/
+
+
+
+    setTimeout(()=>{
+        app.stopAllContainers();
+
+    },5000)
+})})*/
+
 app.on("stop",()=>{
     console.log("HTTP bye bye");
 });
